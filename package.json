@@ -1,0 +1,23 @@
+{
+  "name": "import-esm-demo",
+  "version": "1.0.0",
+  "description": "",
+  "module": "require-index.js",
+  "type": "module",
+  "scripts": {
+    "build-require": "esbuild --bundle --outfile=require-index-out.js require-index.js",
+    "build-import": "esbuild --bundle --outfile=index-out.js index.ts",
+    "build": "npm run build-require && npm run build-import ",
+    "start-require": "node require-index-out.js",
+    "start-import": "node index-out.js",
+    "test": "npm run build && npm run start-require && npm run start-import"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.14.23"
+  },
+  "dependencies": {
+    "mix-with": "^3.2.4"
+  }
+}
